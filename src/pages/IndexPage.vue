@@ -882,9 +882,9 @@
         }
         .parent {
         display: flex;
-        align-items: center; /* Vertically center child elements */
-        justify-content: center; /* Horizontally center child elements */
-        height: 200px; /* Set the height of the parent container */
+        align-items: center; 
+        justify-content: center;
+        height: 200px; 
       }
     
         }
@@ -946,9 +946,9 @@
             }
             .parent {
         display: flex;
-        align-items: center; /* Vertically center child elements */
-        justify-content: center; /* Horizontally center child elements */
-        height: 200px; /* Set the height of the parent container */
+        align-items: center; 
+        justify-content: center;
+        height: 200px; 
       }
      
     } 

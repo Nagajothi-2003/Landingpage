@@ -1,10 +1,9 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated style="background-color: black;">
+    <q-header elevated class="" style="background-color: #4b0dba;">
       <q-toolbar>
         <q-btn
-          flat
-          dense
+         
           round
           icon="menu"
           aria-label="Menu"
@@ -13,11 +12,13 @@
         />
 
         <q-toolbar-title>
-          <img alt="img"
+          <div class="image-container"><q-img src="../assets/logo2.png"  class="rounded-image"></q-img><span class="text-h5 text-bold gt-sm q-ma-sm"> Edex Tech</span></div>
+
+          <!-- <img alt="img"
       src="../assets/logo.png"
       style=" height:25px;width:100px" class="logo q-mt-md"><br/>
       <span  class=" text-weight-bold text-light " style="font-size: 12px;position:relative;top:-15px">
-        <span class="letter">T</span><span style="color:white">raining | </span><span class="letter">p</span><span style="color:white">lacement</span> </span>
+        <span class="letter">T</span><span style="color:white">raining | </span><span class="letter">p</span><span style="color:white">lacement</span> </span> -->
       
         </q-toolbar-title>
         <q-tabs align ="right" class=" q-pa-sm text-h5  text-light" v-if="$q.screen.gt.sm" style="font-family: 'Anton', sans-serif;letter-spacing: 1px;" >
@@ -164,5 +165,18 @@ export default defineComponent({
 }
 .text-dark{
   color:black;
+}
+.image-container {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  /* height: 100%; 
+  width:50%;
+  Ensure the container takes the full height */
+}
+.rounded-image {
+border-radius: 50%;
+  height:50px;
+  width:50px;
 }
 </style>
