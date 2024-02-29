@@ -13,44 +13,30 @@
 
         <q-toolbar-title>
           <div class="image-container"><q-img src="../assets/logo2.png"  class="rounded-image"></q-img><span class="text-h5 text-bold gt-sm q-ma-sm"> Edex Tech</span></div>
-
-          <!-- <img alt="img"
-      src="../assets/logo.png"
-      style=" height:25px;width:100px" class="logo q-mt-md"><br/>
-      <span  class=" text-weight-bold text-light " style="font-size: 12px;position:relative;top:-15px">
-        <span class="letter">T</span><span style="color:white">raining | </span><span class="letter">p</span><span style="color:white">lacement</span> </span> -->
-      
         </q-toolbar-title>
+
         <q-tabs align ="right" class=" q-pa-sm text-h5  text-light" v-if="$q.screen.gt.sm" style="font-family: 'Anton', sans-serif;letter-spacing: 1px;" >
-        <q-route-tab to="/page1" label="Curriculum"  class=" tab-link hoverEff text-capitalize " />
-        <q-route-tab to="/page2" label="Placement"  class=" tab-link hoverEff text-capitalize" />
-        <q-route-tab to="/page4" label="Testimonial"  class=" tab-link  hoverEff text-capitalize" />
-        
-     <q-route-tab to="/page6" label="FAQ"   class=" tab-link  hoverEfftext-capitalize" />
-      <button style="color:black;font-size: 16px;background-color:#ffc107;outline:none;border:none;border-radius: 5px;" class="text-dark "><q-icon name ="phone" color="black" size="sm"></q-icon>9087675432</button>
-      </q-tabs>
+            <q-route-tab to="" label="Curriculum"  class=" tab-link hoverEff text-capitalize " @click="scrollToSection('curriculum')" />
+            <q-route-tab to="" label="Placement"  class=" tab-link hoverEff text-capitalize" @click="scrollToSection('placement')" />
+            <q-route-tab to="" label="Testimonial"  class=" tab-link  hoverEff text-capitalize"  @click="scrollToSection('testimonial')"/>
+            <q-route-tab to="" label="FAQ"   class=" tab-link  hoverEfftext-capitalize" @click="scrollToSection('faq')" />
+            <button style="color:black;font-size: 16px;background-color:#ffc107;outline:none;border:none;border-radius: 5px;" class="text-dark "><q-icon name ="phone" color="black" size="sm"></q-icon>8055224403</button>
+        </q-tabs>
       
         
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      
-      bordered
-    >
+    <q-drawer  v-model="leftDrawerOpen" bordered >
       <q-list>
-        <q-item-label
-          header
-        >
-          Edtex tech
+        <q-item-label header>
+         <div class="text-bold text-h5">Edex Tech</div>
         </q-item-label>
 
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
-          v-bind="link"
-        />
+          v-bind="link" />
       </q-list>
     </q-drawer>
    
@@ -68,34 +54,29 @@ import EssentialLink from 'components/EssentialLink.vue'
 const linksList = [
   {
     title: 'Curriculum',
-
     icon: 'school',
-    link: '#Curriculum'
+    link: ' '
   },
   {
     title: 'Placement',
-   
     icon: 'code',
-    link: '#Placement'
+    link: ''
   },
 
   {
     title: 'Testimonial',
- 
     icon: 'person',
-    link: '#Testimonial'
+    link: ''
   },
   {
     title: 'FAQ',
-   
     icon: 'record_voice_over',
-    link: '#FAQ'
+    link: ''
   },
   {
     title: 'Contact us',
-   
     icon: 'phone',
-    link: '#Contactus'
+    link: ''
   }
   
   
@@ -117,6 +98,17 @@ export default defineComponent({
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
+    }
+  },
+  methods:{
+    scrollToSection(sectionid){
+        const section = document.getElementById(sectionid);
+        if(section){
+          window.scrollTo({
+            top:section.offsetTop,
+            behavior:'smooth'
+          });
+        }
     }
   }
 })
